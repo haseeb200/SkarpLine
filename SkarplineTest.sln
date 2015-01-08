@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2-RestSharp", "Task2-RestSharp\Task2-RestSharp.csproj", "{9C9301F3-AE34-4F10-8561-DAC6ECD07D95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1-ChatApplication", "Task1-ChatApplication\Task1-ChatApplication.csproj", "{862B26EF-7E42-4736-80E5-1CC99D2031F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C9301F3-AE34-4F10-8561-DAC6ECD07D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9301F3-AE34-4F10-8561-DAC6ECD07D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9301F3-AE34-4F10-8561-DAC6ECD07D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9301F3-AE34-4F10-8561-DAC6ECD07D95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{862B26EF-7E42-4736-80E5-1CC99D2031F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{862B26EF-7E42-4736-80E5-1CC99D2031F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{862B26EF-7E42-4736-80E5-1CC99D2031F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{862B26EF-7E42-4736-80E5-1CC99D2031F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="chatApp">
+<head>
+    <title>Task2- Simplae Chat Applictaion</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container" data-ng-controller="ChatController as vm">
+        <h2 class="jumbotron">Welcome To SignalR Chat Application</h2>
+        <p class="bg-info" data-ng-show="!vm.isUserLoggedIn">Please Sign In to start your chat</p>
+        <div data-ng-show="!vm.isUserLoggedIn">
+            <label>UserName:</label>
+            <input type="text" id="UserNameTextBox" data-ng-model="vm.userName" placeholder="Username" />
+            <input type="button" value="SignIn" id="SignInButton" class="btn btn-primary" data-ng-click="vm.signIn()" />
+            <p class="bg-danger">{{vm.errorMessage}}</p>
+        </div>
+        <div data-ng-show="vm.isChatAvailable">
+            <div class="row">
+                <label>Welcome {{vm.userName}}</label>
+                <input type="button" value="Signout" id="SignoutButton" class="btn btn-primary" data-ng-click="vm.signout()" />
+            </div>
+            <br />
+            <div class="row">
+                <input type="text" id="message" placeholder="message" data-ng-model="vm.message" data-ng-keypress="vm.keyPress()" />
+                <input type="button" id="sendmessage" value="Send" class="btn btn-success" data-ng-click="vm.sendMessage()" />
+            </div>
+            <div class="row">
+                <p class="bg-info">{{vm.userTypingMessage}}</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Chat</h3>
+                    <div class="row" data-ng-repeat="item in vm.chatList">
+                        <div class="col-md-2">
+                            <p class="bg-primary">{{item.UserName}}</p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="bg-info">{{item.Message}}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <h3>Available User</h3>
+                    <div ng-repeat="item in vm.users">
+                        <p class="bg-success">{{item}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--<div data-ng-repeat="item in vm.users" style="float: left">
+                <p>{{item}}</p>
+            </div>-->
+        </div>
+
+
+        </
+    </div>
+
+    <script
+
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.1.2.min.js"></script>
+    <!--<script src="signalr/hubs"></script>-->
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-signalr-hub.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/ChatController.js"></script>
+    <!--<script type="text/javascript">
+        $(function () {
+            // Declare a proxy to reference the hub.
+            var chat = $.connection.chatHub;
+            // Create a function that the hub can call to broadcast messages.
+            chat.client.broadcastMessage = function (name, message) {
+                // Html encode display name and message.
+                var encodedName = $('<div />').text(name).html();
+                var encodedMsg = $('<div />').text(message).html();
+                // Add the message to the page.
+                $('#discussion').append('<li><strong>' + encodedName
+                    + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
+            };
+            // Get the user name and store it to prepend to messages.
+            //$('#displayname').val(prompt('Enter your user name:', ''));
+            // Set initial focus to message input box.
+            $('#message').focus();
+            // Start the connection.
+            //$.connection.hub.start().done(function () {
+            //    $('#sendmessage').click(function () {
+            //        // Call the Send method on the hub.
+            //        chat.server.send($('#displayname').val(), $('#message').val());
+            //        // Clear text box and reset focus for next comment.
+            //        $('#message').val('').focus();
+            //    });
+            //});
+            //$.connection.hub.qs = { UserName: $('#displayname').val() };
+
+            //$.connection.hub.start().done(function () {
+            //    $('#SignoutButton').click(function () {
+            //        // Call the Send method on the hub.
+            //        chat.server.logoutUser($('#displayname').val());
+            //        // Clear text box and reset focus for next comment.
+            //        //$('#message').val('').focus();
+            //    });
+            //});
+            //chat.client.log = function (message) {
+            //    //log event
+            //};
+            //chat.client.showUsersOnLine = function (data) {
+            //    console.log(data);
+            //};
+        });
+    </script>-->
+</body>
+</html>
