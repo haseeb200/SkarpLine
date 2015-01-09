@@ -13,6 +13,7 @@
         vm.isChatAvailable = false;
         vm.isUserLoggedIn = false;
         vm.userTypingMessage = "";
+        vm.message = "";
 
         var hub = new Hub('chatHub', {
 
@@ -45,7 +46,12 @@
                     $rootScope.$apply();
                 },
                 'checkUserTyping': function (data) {
-                    vm.userTypingMessage = data;
+                    if (data.Message != "") {
+                        angular.element("#" + data.UserName).text(data.UserName + " is typing.......");
+                    }
+                    else {
+                        angular.element("#" + data.UserName).text(data.UserName);
+                    }
                     $rootScope.$apply();
                 }
             },
@@ -83,7 +89,7 @@
         }
 
         function keyPress() {
-            hub.CheckUserTyping(vm.userName);
+            hub.CheckUserTyping(vm.userName, vm.message);
         }
 
 

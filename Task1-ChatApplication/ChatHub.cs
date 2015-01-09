@@ -19,6 +19,7 @@ namespace Task1_ChatApplication
                 Message = message
             });
             BroadCastMessages();
+            CheckUserTyping(name, "");
         }
 
 
@@ -79,9 +80,14 @@ namespace Task1_ChatApplication
             Clients.All.broadcastMessage(_chatList.Count() > 0 ? _chatList.Take(15) : _chatList);
         }
 
-        public void CheckUserTyping(string userName)
+        public void CheckUserTyping(string userName, string message)
         {
-            Clients.All.checkUserTyping(userName + " is typing...");
+            var messageObject = new Messages()
+            {
+                UserName = userName,
+                Message = message
+            };
+            Clients.All.checkUserTyping(messageObject);
         }
     }
 }
