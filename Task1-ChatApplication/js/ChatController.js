@@ -42,7 +42,6 @@
                 'broadcastMessage': function (data) {
                     vm.chatList = data;
                     vm.userTypingMessage = "";
-                    vm.message = "";
                     $rootScope.$apply();
                 },
                 'checkUserTyping': function (data) {
@@ -86,6 +85,7 @@
 
         function sendMessage() {
             hub.Send(vm.userName, vm.message);
+            vm.message = "";
         }
 
         function keyPress() {

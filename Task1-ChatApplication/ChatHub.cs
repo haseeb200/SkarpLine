@@ -39,6 +39,10 @@ namespace Task1_ChatApplication
                     loginMessage = "User Limit reached.";
                 }
             }
+            else
+            {
+                loginMessage = userName;
+            }
             LogInSuccess(loginMessage);
             ShowUsersOnLine();
             BroadCastMessages();
@@ -70,9 +74,9 @@ namespace Task1_ChatApplication
             Clients.Caller.logoutSuccess();
         }
 
-        public void ShowUsersOnLine()
+        public void ShowUsersOnLine() 
         {
-            Clients.All.showUsersOnLine(_users);
+            Clients.All.showUsersOnLine(_users); 
         }
 
         private void BroadCastMessages()
